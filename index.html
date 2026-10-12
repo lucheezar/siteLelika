@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#273c34">
+  <meta name="description" content="Тихое место для отдыха и восстановления. Найдите студию «Тихая практика» в любимой соцсети.">
+  <title>Тихая практика — массаж и восстановление</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --forest: #273c34;
+      --leaf: #6c8069;
+      --cream: #f3f0e6;
+      --paper: #e8e5d9;
+      --ochre: #dca95e;
+      --ink: #24332d;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: min(790px, 100svh);
+      overflow: hidden;
+      align-items: center;
+      color: var(--cream);
+      background: var(--forest);
+      isolation: isolate;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      content: "";
+      background: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=2200&q=88") center 47% / cover no-repeat;
+      animation: arrive 1.2s ease-out both;
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(25, 43, 36, .88) 0%, rgba(25, 43, 36, .72) 42%, rgba(25, 43, 36, .15) 100%), linear-gradient(0deg, rgba(19, 34, 28, .42), transparent 40%);
+    }
+    .topbar, .hero-content, .hero-foot, .contact-inner {
+      width: min(1120px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+    .topbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 28px;
+      animation: rise .7s .12s both;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgba(243, 240, 230, .64);
+      border-radius: 50%;
+      color: var(--ochre);
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1;
+    }
+    .top-note {
+      color: rgba(243, 240, 230, .84);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero-content { padding-block: 112px 118px; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: #e2c38e;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      animation: rise .7s .2s both;
+    }
+    .eyebrow::before { width: 30px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(54px, 7.3vw, 92px);
+      font-weight: 500;
+      line-height: .99;
+      animation: rise .8s .28s both;
+    }
+    h1 span { display: block; color: #dfc48f; font-style: italic; }
+    .intro {
+      max-width: 420px;
+      margin: 25px 0 0;
+      color: rgba(243, 240, 230, .84);
+      font-size: 15px;
+      line-height: 1.8;
+      animation: rise .8s .38s both;
+    }
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+      animation: rise .8s .48s both;
+    }
+    .social-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      gap: 11px;
+      padding: 0 17px;
+      border: 1px solid rgba(243, 240, 230, .42);
+      border-radius: 3px;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .social-link:hover, .social-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--cream);
+      color: var(--forest);
+      background: var(--cream);
+      outline: none;
+    }
+    .social-link svg { width: 17px; height: 17px; flex: none; }
+    .hero-foot {
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(243, 240, 230, .68);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .scroll-cue { display: inline-flex; align-items: center; gap: 9px; }
+    .scroll-cue::before { width: 24px; height: 1px; background: var(--ochre); content: ""; }
+    .contact {
+      padding: 52px 0 58px;
+      background: var(--cream);
+    }
+    .contact-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .contact-label {
+      margin: 0 0 8px;
+      color: var(--leaf);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .contact h2 {
+      margin: 0;
+      color: var(--forest);
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 500;
+    }
+    .contact-description {
+      max-width: 430px;
+      margin: 10px 0 0;
+      color: #59675f;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .contact-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--forest);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .contact-action span {
+      display: grid;
+      width: 38px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgba(39, 60, 52, .35);
+      border-radius: 50%;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .contact-action:hover span { transform: translateX(3px); background: var(--paper); }
+    .contact-action svg { width: 16px; height: 16px; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px max(32px, calc((100% - 1120px) / 2));
+      color: rgba(243, 240, 230, .72);
+      background: var(--forest);
+      font-size: 11px;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes arrive {
+      from { opacity: .65; transform: scale(1.035); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (max-width: 640px) {
+      .hero { min-height: 760px; min-height: 100svh; }
+      .hero::before { background-position: 58% center; }
+      .hero::after { background: linear-gradient(90deg, rgba(25, 43, 36, .86), rgba(25, 43, 36, .4)), linear-gradient(0deg, rgba(19, 34, 28, .5), transparent 55%); }
+      .topbar, .hero-content, .hero-foot, .contact-inner { width: calc(100% - 40px); }
+      .topbar { padding-block: 20px; }
+      .top-note { max-width: 120px; text-align: right; font-size: 10px; line-height: 1.5; }
+      .hero-content { padding-block: 130px 108px; }
+      h1 { max-width: 470px; font-size: clamp(53px, 14vw, 76px); }
+      .intro { max-width: 340px; font-size: 14px; }
+      .socials { display: grid; width: 100%; max-width: none; grid-template-columns: 1fr; gap: 8px; margin-top: 27px; }
+      .social-link { width: 100%; min-height: 46px; justify-content: center; padding-inline: 13px; font-size: 12px; }
+      .hero-foot { bottom: 20px; font-size: 9px; }
+      .contact { padding-block: 38px; }
+      .contact-inner { align-items: flex-start; flex-direction: column; gap: 20px; }
+      .contact h2 { font-size: 27px; }
+      footer { padding-inline: 20px; font-size: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="home" aria-labelledby="title">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Тихая практика, на главную">
+          <span class="brand-mark" aria-hidden="true">Т</span>
+          <span>тихая практика</span>
+        </a>
+        <span class="top-note">Массаж · забота · восстановление</span>
+      </header>
+
+      <div class="hero-content">
+        <p class="eyebrow">Пространство бережного прикосновения</p>
+        <h1 id="title">Вернитесь<br>в своё <span>равновесие</span></h1>
+        <p class="intro">Место, где можно выдохнуть, отпустить напряжение и снова почувствовать себя. Записывайтесь и следите за новостями там, где вам удобно.</p>
+        <nav class="socials" aria-label="Мы в социальных сетях">
+          <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram, откроется в новой вкладке">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a class="social-link" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX, откроется в новой вкладке">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.1-4.2A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8.5 12h.1m3.4 0h.1m3.4 0h.1" stroke-width="2.4" stroke-linecap="round"/></svg>
+            MAX
+          </a>
+          <a class="social-link" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram, откроется в новой вкладке">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m21.5 4.2-3.2 15.1c-.2 1.1-.8 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.4-.1-.6-.6-.2L6.2 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20 3.4c.9-.3 1.7.2 1.5.8z"/></svg>
+            Telegram
+          </a>
+        </nav>
+      </div>
+
+      <div class="hero-foot" aria-hidden="true">
+        <span>Тело помнит заботу</span>
+        <span class="scroll-cue">Найдите нас</span>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div>
+          <p class="contact-label">Запись через Telegram-бота</p>
+          <h2 id="contact-title">Ваше время для себя</h2>
+          <p class="contact-description">Узнайте о свободном времени, выберите удобный сеанс и задайте вопросы о массаже прямо в Telegram.</p>
+        </div>
+        <a class="contact-action" href="https://t.me/time_for_u_selfbot" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram-бота">
+          Открыть бота
+          <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>© <span id="year">2026</span> Тихая практика</span>
+    <span>Забота начинается с паузы</span>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
